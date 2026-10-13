@@ -227,8 +227,8 @@ server <- function(input, output, session) {
         ),
         salty = rescale(
           ec,
-          lower_bound  = 10,
-          upper_bound  = 100,
+          lower_bound  = 1,
+          upper_bound  = 4,
           lower_target = 0,
           upper_target = 1,
           invert       = FALSE
