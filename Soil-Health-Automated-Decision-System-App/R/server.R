@@ -212,7 +212,7 @@ server <- function(input, output, session) {
           oc_to_clay,
           lower_bound  = 1 / 13,
           upper_bound  = 1 / 8,
-          lower_target = 0.1,
+          lower_target = 0,
           upper_target = 1,
           invert       = TRUE
         ),
@@ -221,7 +221,7 @@ server <- function(input, output, session) {
           pd,
           lower_bound  = 1.60,
           upper_bound  = 1.82,
-          lower_target = 0.1,
+          lower_target = 0,
           upper_target = 1,
           invert       = FALSE
         ),
@@ -229,7 +229,7 @@ server <- function(input, output, session) {
           ec,
           lower_bound  = 10,
           upper_bound  = 100,
-          lower_target = 0.1,
+          lower_target = 0,
           upper_target = 1,
           invert       = FALSE
         ),
@@ -237,7 +237,7 @@ server <- function(input, output, session) {
           p_ex,
           lower_bound  = 30,
           upper_bound  = 50,
-          lower_target = 0.1,
+          lower_target = 0,
           upper_target = 1,
           invert       = FALSE
         ),
@@ -245,7 +245,7 @@ server <- function(input, output, session) {
           ph,
           lower_bound  = 5,
           upper_bound  = 6.5,
-          lower_target = 0.1,
+          lower_target = 0,
           upper_target = 1,
           invert       = TRUE
         )
@@ -439,6 +439,11 @@ server <- function(input, output, session) {
       ) +
       ylim(-plot_max_value / 3, plot_max_value * 2) +
       coord_polar(start = 0, clip = "off") +
+      geom_hline(
+          yintercept = 0,
+          color = "grey50",
+          linewidth = 0.3
+        ) +
       geom_text(
         aes(
           x     = id,
